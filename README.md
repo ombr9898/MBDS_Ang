@@ -1,15 +1,23 @@
 ##Projet Angular
 Dans ce projet on a pu éfféctuer un application web avec Angular et nodeJs
-
 ##Acquis
-
 utilisation pour la premeire fois de Angular , NodeJS
+
+## lancement 
+
+-npm install in api
+
+-npm start
+
+-npm install in client/assignement-app
+
+-npm start
 
 ##Travail réaliser
 
 -4 tableau eleve , assignement , matiers et prof 
 
--api REST pour les 4 tableaux 
+-Api REST pour les 4 tableaux 
 
 -JWT token pour authentification 
 
