@@ -1,6 +1,6 @@
-##Projet Angular
+## Projet Angular
 Dans ce projet on a pu éfféctuer un application web avec Angular et nodeJs
-##Acquis
+## Acquis
 utilisation pour la premeire fois de Angular , NodeJS
 
 ## lancement 
@@ -13,7 +13,7 @@ utilisation pour la premeire fois de Angular , NodeJS
 
 -npm start
 
-##Travail réaliser
+## Travail réaliser
 
 -4 tableau eleve , assignement , matiers et prof 
 
@@ -25,8 +25,8 @@ utilisation pour la premeire fois de Angular , NodeJS
 
 -liste des 3 autres tableaux
 
-#Groupe
+# Groupe
 Omar Bounor , Zakaria Dridi, Khadijat Tcherguizova
 
-#video 
+# video 
 https://youtu.be/qyAc_8EvmwQ
