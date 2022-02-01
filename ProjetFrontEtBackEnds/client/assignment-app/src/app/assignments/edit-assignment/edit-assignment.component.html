@@ -1,10 +1,14 @@
 <div class="container" *ngIf="assignment">
-  <h1>Edition de l'assignment {{assignment.nom}}</h1>
+  <h1>Edition de l'assignment {{assignment.nom}} de l'éléve {{eleves[assignment._auteur].nom}} {{eleves[assignment._auteur].nom}}</h1>
   <form ngForm class="form">
     <mat-form-field>
-      <input matInput placeholder="Edition du nom"
-      [(ngModel)]="nomAssignment" name="assignment-name">
-    </mat-form-field>
+      <input matInput type="number" placeholder="Edition du note"
+      [(ngModel)]="note" name="assignment-note">
+    </mat-form-field>  
+    <mat-form-field>
+      <input matInput  placeholder="Edition du Remarque"
+      [(ngModel)]="remarque" name="assignment-remarque">
+    </mat-form-field> 
     <mat-form-field>
       <input matInput [matDatepicker]="picker" placeholder="Edition de la date"
       [(ngModel)]="dateDeRendu" name="date">

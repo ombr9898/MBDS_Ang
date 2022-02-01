@@ -1,8 +1,10 @@
 import { MatieresComponent } from "./matieres.component";
 
-export class Assignment {
-    id!: string;
+export class Matiere {
+    id!: number;
     name!: string;
-    thumbnail!: string;
+    image!: string;
+    prof!:number;
+    _id!:string;
 }
 

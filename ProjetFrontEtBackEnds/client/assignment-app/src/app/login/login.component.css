@@ -1,7 +1,15 @@
 .login {
     display: grid;
     place-items: center;
-    height: 100%;
+    margin:5px;
+    background-color: #2b73b3;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 500px;
+    padding: 20px;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 5%;
   }
   
     .login img {

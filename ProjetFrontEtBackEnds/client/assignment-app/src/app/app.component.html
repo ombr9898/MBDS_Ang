@@ -3,12 +3,12 @@
     <!-- Brand -->
     <!-- <a class="navbar-brand" href="#">Gestion Assignments</a>-->
     <!-- Links -->
-    <ul class="navbar-brand">
-      <li class="nav-item" id="home">
+    <ul class="navbar-brand"  *ngIf="isLoggedIn()">
+      <li class="nav-item" >
         <a class="nav-link" routerLink="/home">Home</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="logout()"  >LOGOUT</a>
+      <li class="nav-item" id="home">
+        <a class="nav-link" (click)="logout()"  >LogOut</a>
       </li>
       <!-- Dropdown -->
       <li class="nav-item dropdown">
@@ -17,17 +17,7 @@
         </a>
         <ul class="dropdown-menu">
          <li> <a class="dropdown-item" routerLink="/add-assignment">Ajouter</a> </li>
-         <li> <a class="dropdown-item" href="#">Lister</a> </li>
-        </ul>
-      </li>
-
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-          Devoires
-        </a>
-        <ul class="dropdown-menu">
-         <li> <a class="dropdown-item" routerLink="add-devoir">Ajouter</a> </li>
-         <li> <a class="dropdown-item" href="#">Lister</a> </li>
+         <li> <a class="dropdown-item" href="/assignment">Lister</a> </li>
         </ul>
       </li>
 
@@ -36,8 +26,25 @@
           Matieres
         </a>
         <ul class="dropdown-menu">
-         <li> <a class="dropdown-item" routerLink="add-matiere">Ajouter</a> </li> 
-         <li> <a class="dropdown-item" routerLink="assignmentHome">Lister</a> </li>
+         <li> <a class="dropdown-item" routerLink="/matiere">Lister</a> </li>
+        </ul>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Profs
+        </a>
+        <ul class="dropdown-menu"> 
+         <li> <a class="dropdown-item" routerLink="/prof">Lister</a> </li>
+        </ul>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Eleves
+        </a>
+        <ul class="dropdown-menu"> 
+         <li> <a class="dropdown-item" routerLink="/eleve">Lister</a> </li>
         </ul>
       </li>
     </ul>
@@ -50,7 +57,6 @@
       <h1>{{titre}}</h1>
     </a>
   </nav>
-  <mat-slide-toggle color="primary" (click)="login()">Connexion en tant qu'admin</mat-slide-toggle>
   
   <!--
   <app-assignments></app-assignments>

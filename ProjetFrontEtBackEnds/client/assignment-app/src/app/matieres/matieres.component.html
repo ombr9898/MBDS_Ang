@@ -1,1 +1,25 @@
-<p>matieres works!</p>
+<main class="container">
+    
+  <button mat-button (click)="pagePrecedente()" [disabled]="!hasPrevPage">Page précédente</button>
+  &nbsp;&nbsp;
+  <button mat-button (click)="pageSuivante()" [disabled]="!hasNextPage">Page Suivante</button>
+    <div class="cards">
+      <div class="card">
+        <mat-list *ngFor="let matiere of matieres">
+          <a routerLink="/matiere/{{matiere.id}}">
+            <h1 mat-subheader>Nom de la matiere:{{matiere.name}}</h1>
+            <h2 mat-subheader>Image:{{matiere.image}}</h2>
+            <h3 mat-subheader>Prof:{{matiere.prof}}</h3>
+            <mat-list-item (click)="matiereClique(matiere)">
+              <ng-template #nonsoumis>
+                {{matiere.name}} pas encore rendu.
+              </ng-template>
+            </mat-list-item>
+          </a>
+          <mat-divider></mat-divider>
+        </mat-list>
+      </div>
+    </div>
+  
+  </main>
+  

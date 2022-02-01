@@ -1,7 +1,14 @@
 let express = require('express');
 let app = express();
 let bodyParser = require('body-parser');
+let matiere = require('./routes/matieres');
 let assignment = require('./routes/assignments');
+let prof = require('./routes/profs');
+let eleve = require('./routes/eleves');
+let  user=  require('./routes/users');
+var AuthController = require('./AuthController');
+
+
 
 let mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
@@ -38,6 +45,7 @@ app.use(function (req, res, next) {
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+
 let port = process.env.PORT || 8010;
 
 // les routes
@@ -52,7 +60,39 @@ app.route(prefix + '/assignments/:id')
   .get(assignment.getAssignment)
   .delete(assignment.deleteAssignment);
 
-// On démarre le serveur
+app.route(prefix + '/matieres')
+  .get(matiere.getMatieres)
+  .post(matiere.postMatiere)
+  .put(matiere.updateMatiere);
+
+app.route(prefix + '/matieres/:id')
+  .get(matiere.getMatiere)
+  .delete(matiere.deleteMatiere);
+
+app.route(prefix + '/profs')
+  .get(prof.getProfs)
+  .post(prof.postProf)
+  .put(prof.updateProf);
+
+app.route(prefix + '/profs/:id')
+  .get(prof.getProf)
+  .delete(prof.deleteProf);
+app.route(prefix + '/eleves')
+  .get(eleve.getEleves)
+  .post(eleve.postEleve)
+  .put(eleve.updateEleve);
+
+app.route(prefix + '/eleves/:id')
+  .get(eleve.getEleve)
+  .delete(eleve.deleteEleve);
+app.route(prefix+'/users')
+    .get(user.getUsers);
+app.route(prefix+'/users/:id')
+    .get(user.getUser);
+app.route(prefix+'/auth/login')
+  .post(AuthController.a);
+
+
 app.listen(port, "0.0.0.0");
 console.log('Serveur démarré sur http://localhost:' + port);
 

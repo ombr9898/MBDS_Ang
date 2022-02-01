@@ -1,1 +1,21 @@
-<p>matiere-detail works!</p>
+<mat-card *ngIf="matiereTransmis">
+    <mat-card-title>{{matiereTransmis.name}}</mat-card-title>
+    <mat-card-subtitle>{{matiereTransmis.image}}</mat-card-subtitle>
+    <div class="bottom">
+        <!--
+      <mat-checkbox *ngIf='!assignmentTransmis.rendu' (click)="onAssignmentRendu()">
+        Rendu
+      </mat-checkbox>-->
+      <!-- Première possibilité
+      <nav>
+        <a [routerLink]="['/assignment', assignmentTransmis.id, 'edit']">
+          <button mat-stroked-button color="primary">EDIT</button>
+        </a>
+      </nav>
+      -->
+      <!-- Deuxième possibilité : navigation par programme -->
+     <button mat-stroked-button [disabled]="!isAdmin()" color="primary" (click)="onClickEdit()">EDIT</button>
+  
+      <button mat-raised-button color="warn" (click)="onDelete()">DELETE</button>
+    </div>
+  </mat-card>

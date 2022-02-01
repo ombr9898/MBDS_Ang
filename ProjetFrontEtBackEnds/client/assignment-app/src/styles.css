@@ -62,6 +62,9 @@ h1 {
   #home{
       margin-right: 60rem;
   }
+  #logout{
+      margin-right: 50rem;
+  }
         .navbar-brand li{
         height: auto;
         width: 135.8px; 

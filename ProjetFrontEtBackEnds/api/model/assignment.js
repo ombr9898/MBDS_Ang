@@ -7,7 +7,11 @@ let AssignmentSchema = Schema({
     id: Number,
     dateDeRendu: Date,
     nom: String,
-    rendu: Boolean
+    rendu: Boolean,
+    _auteur: Number,
+    _matiere: Number,
+    Note: Number,
+    Remarque: String
 });
 
 // Pour activer le plugin

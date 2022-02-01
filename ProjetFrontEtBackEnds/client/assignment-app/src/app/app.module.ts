@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
@@ -23,15 +23,19 @@ import { Routes, RouterModule } from '@angular/router';
 import { EditAssignmentComponent } from './assignments/edit-assignment/edit-assignment.component';
 import { AuthGuard } from './shared/auth.guard';
 import { HttpClientModule } from '@angular/common/http';
-import { DevoirsComponent } from './devoirs/devoirs.component';
 import { MatieresComponent } from './matieres/matieres.component';
-import { DevoirDetailComponent } from './devoirs/devoir-detail/devoir-detail.component';
 import { MatiereDetailComponent } from './matieres/matiere-detail/matiere-detail.component';
 import { LoginComponent } from './login/login.component';
-import { AddDevoirComponent } from './devoirs/add-devoir/add-devoir.component';
-import { EditDevoirComponent } from './devoirs/edit-devoir/edit-devoir.component';
-import { EditMatiereComponent } from './edit-matiere/edit-matiere.component';
-import { AddMatiereComponent } from './add-matiere/add-matiere.component';
+import { EditMatiereComponent } from './matieres/edit-matiere/edit-matiere.component';
+import { AddMatiereComponent } from './matieres/add-matiere/add-matiere.component';
+import { ProfsComponent } from './profs/profs.component';
+import { ProfDetailComponent } from './profs/prof-detail/prof-detail.component';
+import { AddProfComponent } from './profs/add-prof/add-prof.component';
+import { EditProfComponent } from './profs/edit-prof/edit-prof.component';
+import { ElevesComponent } from './eleves/eleves.component';
+import { EditEleveComponent } from './eleves/edit-eleve/edit-eleve.component';
+import { AddEleveComponent } from './eleves/add-eleve/add-eleve.component';
+import { EleveDetailComponent } from './eleves/eleve-detail/eleve-detail.component';
 
 const routes:Routes = [
   {
@@ -39,6 +43,27 @@ const routes:Routes = [
   },
   {
     path:"home", component: AssignmentsComponent
+  },
+  {
+    path:"assignment", component: AssignmentsComponent
+  },
+  {
+    path:"prof", component: ProfsComponent
+  },
+  {
+    path:"prof/:id", component: ProfDetailComponent
+  },
+  {
+    path:"matiere", component: MatieresComponent
+  },
+  {
+    path:"matiere/:id", component: MatiereDetailComponent
+  },
+  {
+    path:"eleve", component: ElevesComponent
+  },
+  {
+    path:"eleve/:id", component: EleveDetailComponent
   },
   {
     path:"login", component: LoginComponent
@@ -54,16 +79,6 @@ const routes:Routes = [
     canActivate : [AuthGuard]
   },
   {
-    path:"add-devoir", component: AddDevoirComponent
-  },
-  {
-    path:"devoir/:id", component: DevoirDetailComponent
-  },
-  {
-    path:"devoir/:id/edit", component: EditDevoirComponent,
-    canActivate : [AuthGuard]
-  },
-  {
     path:"add-matiere", component: AddMatiereComponent
   },
   {
@@ -71,6 +86,26 @@ const routes:Routes = [
   },
   {
     path:"matiere/:id/edit", component: EditMatiereComponent,
+    canActivate : [AuthGuard]
+  },
+  {
+    path:"add-prof", component: AddProfComponent
+  },
+  {
+    path:"prof/:id", component: ProfDetailComponent
+  },
+  {
+    path:"prof/:id/edit", component: EditProfComponent,
+    canActivate : [AuthGuard]
+  },
+   {
+    path:"add-eleve", component: AddEleveComponent
+  },
+  {
+    path:"eleve/:id", component: EleveDetailComponent
+  },
+  {
+    path:"eleve/:id/edit", component: EditEleveComponent,
     canActivate : [AuthGuard]
   },
 ]
@@ -82,17 +117,22 @@ const routes:Routes = [
     AssignmentDetailComponent,
     AddAssignmentComponent,
     EditAssignmentComponent,
-    DevoirsComponent,
     MatieresComponent,
-    DevoirDetailComponent,
     MatiereDetailComponent,
     LoginComponent,
-    AddDevoirComponent,
-    EditDevoirComponent,
     EditMatiereComponent,
-    AddMatiereComponent
+    AddMatiereComponent,
+    ProfsComponent,
+    ProfDetailComponent,
+    AddProfComponent,
+    EditProfComponent,
+    ElevesComponent,
+    EditEleveComponent,
+    AddEleveComponent,
+    EleveDetailComponent
   ],
   imports: [
+    DragDropModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule, MatIconModule, MatDividerModule,

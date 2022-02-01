@@ -1,22 +1,29 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { Observable } from 'rxjs';
+import {User} from "../login/login.model";
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  loggedIn = false;
+  loggedIn = true;
+  
 
-  constructor() { }
-
+  constructor(private http:HttpClient) { }
+  url = "http://localhost:8010/api/auth/login";
   // appelé quand on a rempli le formulaire login/password
   // devrait prendre en params le login et le pass
-  logIn() {
-    this.loggedIn = true;
+  logIn(user:User):Observable<any> {
+    console.log("TRYING TO LOG IN")
+    console.log(this.http.post(this.url, user))
+    return this.http.post(this.url, user);
   }
 
   // appelé par bouton de deconnexion
   logOut() {
+    localStorage.removeItem("access_token");
     this.loggedIn = false;
+    alert("Succes !");  
   }
 
   // vérification du rôle. Dans cet exemple simple on dit qu'on est admin
@@ -27,7 +34,7 @@ export class AuthService {
       // ici typiquement, on pourrait faire une requête
       // et donc ça prendrait du temps... c'est la raison
       // pour laquelle on renvoie une promesse....
-        resolve(this.loggedIn);
+        resolve(localStorage.getItem('access_token')!=null);
     });
 
     return isUserAdmin;

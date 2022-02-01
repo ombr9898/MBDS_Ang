@@ -14,7 +14,6 @@ export class AppComponent {
 
   login() {
     if(!this.authService.loggedIn) {
-      this.authService.logIn();
     } else {
       this.authService.logOut();
       this.router.navigate(["/home"]);
@@ -23,6 +22,9 @@ export class AppComponent {
   logout(){
     this.authService.logOut();
     this.router.navigate(["/login"]);
+  }
+  isLoggedIn():boolean {
+    return localStorage.getItem('access_token') != null ;
   }
   
 }

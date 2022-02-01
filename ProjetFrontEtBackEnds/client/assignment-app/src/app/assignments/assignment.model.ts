@@ -5,7 +5,11 @@ export class Assignment {
   dateDeRendu?:Date;
   rendu?:boolean;
   id!:number;
-  _id?:string
+  _id?:string;
+  _auteur!:number;
+  _matiere!:number;
+  note!:number;
+  remarque!:string;
 }
 
 

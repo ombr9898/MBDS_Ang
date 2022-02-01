@@ -4,9 +4,10 @@ var aggregatePaginate = require("mongoose-aggregate-paginate-v2");
 let Schema = mongoose.Schema;
 
 let MatiereSchema = Schema({
-    id: String,
+    id: Number,
     name: String,
-    thumbnail: String
+    image: String,
+    prof: Number
 });
 
 

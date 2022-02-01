@@ -1,34 +1,47 @@
 <main class="container">
 
-  <div class="ajouterBtn">
-    <button mat-flat-button color="accent" (click)="peuplerBD()">
-      PeuplerBD
-    </button>
 
-    <a routerLink="/add">
-      <button mat-flat-button color="accent">
-        Ajouter Assignment
-      </button>
-    </a>
+  <button mat-button (click)="pagePrecedente()" [disabled]="!hasPrevPage">Page précédente</button>
+  &nbsp;&nbsp;
+  <button mat-button (click)="pageSuivante()" [disabled]="!hasNextPage">Page Suivante</button>
+<div class="cards">
+  <div class="card"  >
+    <h2>Assignments rendu</h2>
+    <mat-list *ngFor="let assignment of Rendu" > 
+      <a routerLink="/assignment/{{assignment.id}}" >
+        <h3 mat-subheader>{{assignment.dateDeRendu | date}}</h3>
+        <mat-list-item (click)="assignmentClique(assignment)">
+          <p >
+            <img src="{{matieres[assignment._matiere].image}}" height="42" width="42" alt="image">
+            <img src="{{profs[matieres[assignment._matiere].prof-1].photo}}" height="42" width="42"alt="image">
+            {{assignment.nom}}, a été rendu par l'élève {{eleves[assignment._matiere].nom}} {{eleves[assignment._matiere].prenom}}  .
+            
 
-  </div>
+          </p>
+        </mat-list-item>
+      </a>
+      <mat-divider></mat-divider>
+    </mat-list>
+  </div>  
 
-<button mat-button (click)="pagePrecedente()" [disabled]="!hasPrevPage">Page précédente</button>
-&nbsp;&nbsp;
-<button mat-button (click)="pageSuivante()" [disabled]="!hasNextPage">Page Suivante</button>
+  <div class="card">
+    <h2>Assignments non rendu</h2>
+    <mat-list *ngFor="let assignment of NonRendu" > 
+      <a routerLink="/assignment/{{assignment.id}}" >
+        <h3 mat-subheader>{{assignment.dateDeRendu | date}}</h3>
+        <mat-list-item (click)="assignmentClique(assignment)">
+          <p >
+            <img src="{{matieres[assignment._matiere].image}}" height="42" width="42"alt="image">
+            <img src="{{profs[matieres[assignment._matiere].prof-1].photo}}" height="42" width="42" alt="image">
 
-  <mat-list *ngFor="let assignment of assignments">
-    <a routerLink="/assignment/{{assignment.id}}">
-      <h3 mat-subheader>{{assignment.dateDeRendu | date}}</h3>
-      <mat-list-item (click)="assignmentClique(assignment)">
-        <p *ngIf="assignment.rendu; else nonsoumis" appRendu>
-          {{assignment.nom}}, a été rendu par l'élève.
-          rendu : {{assignment.rendu}}</p>
-        <ng-template #nonsoumis>
-          {{assignment.nom}} pas encore rendu.
-        </ng-template>
-      </mat-list-item>
-    </a>
-    <mat-divider></mat-divider>
-  </mat-list>
+            {{assignment.nom}}, n'a pas été rendu par l'élève {{eleves[assignment._matiere].nom}} {{eleves[assignment._matiere].prenom}}
+            
+
+          </p>
+        </mat-list-item>
+      </a>
+      <mat-divider></mat-divider>
+    </mat-list>
+  </div> 
+</div> 
 </main>

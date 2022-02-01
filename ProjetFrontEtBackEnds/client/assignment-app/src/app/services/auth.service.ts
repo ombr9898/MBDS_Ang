@@ -1,68 +1,45 @@
 import { User } from '../login/login.model';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  users: User[] = [{"username":"admin","password":"123","roles":['ADMIN']},
-                   {"username":"zakaria","password":"123","roles":['USER']} ];
-
   public loggedUser?:string;
-  public isloggedIn: Boolean = false;
+  public loggedIn: Boolean = true;
   public roles?:string[];
 
    
-  constructor(private router: Router) { }
-
+  constructor(private router: Router,private http:HttpClient) { }
+  url = "http://localhost:8010/api/auth/login";
 
 
 logout() { 
-  this.isloggedIn= false;
-  this.loggedUser = undefined;
-  this.roles = undefined;
-  localStorage.removeItem('loggedUser');
-  localStorage.setItem('isloggedIn',String(this.isloggedIn));
-  this.router.navigate(['/login']);
-}
+  localStorage.removeItem("access_token");
+    this.loggedIn = false;
+    alert("Succes !");
+  }
 
-  SignIn(user :User):Boolean{
-    let validUser: Boolean = false;
-    this.users.forEach((curUser) => {
-      if(user.username=== curUser.username && user.password==curUser.password) {
-        validUser = true;
-        this.loggedUser = curUser.username;
-        this.isloggedIn = true;
-        this.roles = curUser.roles;
-        localStorage.setItem('loggedUser',this.loggedUser);
-        localStorage.setItem('isloggedIn',String(this.isloggedIn));
-      }
+  SignIn(user :User):Observable<any>{
+    console.log(user)
+    
+    return this.http.post(this.url, user);
+    console.log(this.url,user)
+  }
+
+  isAdmin(){
+    const isUserAdmin = new Promise((resolve, reject) => {
+        resolve(localStorage.getItem('access_token') != null )
     });
 
-     return validUser;
+    return isUserAdmin;
   }
 
-  isAdmin():Boolean{
-    if (!this.roles) //this.roles== undefiened
-       return false;
-    return (this.roles.indexOf('ADMIN') >-1);
-   
-  }
-
-  setLoggedUserFromLocalStorage(login : string) {
-    this.loggedUser = login;
-    this.isloggedIn = true;
-    this.getUserRoles(login);
-  }
-
-  getUserRoles(username :string){    
-    this.users.forEach((curUser) => {
-      if( curUser.username == username) {
-          this.roles = curUser.roles;
-      }
-    });
-  }
+  
 
 }
