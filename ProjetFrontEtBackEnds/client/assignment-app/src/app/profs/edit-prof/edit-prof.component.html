@@ -1,0 +1,25 @@
+<div class="container" *ngIf="prof">
+    <h1>Edition de la prof {{prof.nom}}</h1>
+    <form ngForm class="form">
+      <mat-form-field>
+        <input matInput placeholder="Edition du nom"
+        [(ngModel)]="nomProf" name="prof-nom">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Edition du prenom"
+        [(ngModel)]="prenomProf" name="prof-prenom">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Edition de l'adresse"
+        [(ngModel)]="adresseProf" name="prof-adresse">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Edition de photo"
+        [(ngModel)]="photoProf" name="Prof-photo">
+      </mat-form-field>
+      
+      <button mat-raised-button color="primary" (click)="onSaveProf()">
+        Sauver
+      </button>
+    </form>
+  </div>

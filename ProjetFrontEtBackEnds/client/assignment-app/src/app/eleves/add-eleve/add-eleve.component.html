@@ -1,0 +1,21 @@
+<form ngForm #eleveForm class="form" (submit)="onSubmit($event);eleveForm.reset();">
+    <mat-form-field>
+      <input required matInput [(ngModel)]="nomEleve" name="nomEleve" placeholder="Nom de l'eleve" class="comp">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input required matInput [(ngModel)]="prenomEleve" name="prenomEleve" placeholder="Prenom de l'eleve" class="comp">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input required matInput [(ngModel)]="adresseEleve" name="adresseEleve" placeholder="Adresse de l'eleve" class="comp">
+    </mat-form-field>
+  
+    
+  
+      <button mat-stroked-button color="primary" class="comp">
+        Ajouter un eleve
+      </button>
+   
+  </form>
+  

@@ -1,0 +1,17 @@
+.form {
+  display:flex;
+  flex-direction: column;
+  margin:5px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 500px;
+  padding: 20px;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 5%;
+  border: black solid 1px;
+}
+.comp{
+  margin-bottom: 2rem;
+}

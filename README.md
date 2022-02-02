@@ -5,27 +5,27 @@ utilisation pour la premeire fois de Angular , NodeJS
 
 ## lancement 
 
--npm install in api
+- npm install in api
 
--npm start
+- npm start
 
--npm install in client/assignement-app
+- npm install in client/assignement-app
 
--npm start
+- npm start
 
 - identifiant zakaria password 123
 
 ## Travail réaliser
 
--4 tableau eleve , assignement , matiers et prof 
+- 4 tableau eleve , assignement , matiers et prof 
 
--Api REST pour les 4 tableaux 
+- Api REST pour les 4 tableaux 
 
--JWT token pour authentification 
+- JWT token pour authentification 
 
--Add assignment , edit assignment , detail assignment , ainsi que la liste des assignment.
+- Add assignment , edit assignment , detail assignment , ainsi que la liste des assignment.
 
--liste des 3 autres tableaux
+- liste des 3 autres tableaux
 
 # Groupe
 Omar Bounor , Zakaria Dridi, Khadijat Tcherguizova

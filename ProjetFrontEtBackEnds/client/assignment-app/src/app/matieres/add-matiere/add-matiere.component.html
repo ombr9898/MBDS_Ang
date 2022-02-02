@@ -1,0 +1,21 @@
+<form ngForm #matiereForm class="form" (submit)="onSubmit($event);matiereForm.reset();">
+    <mat-form-field>
+      <input required matInput [(ngModel)]="nameMatiere" name="name" placeholder="name" class="comp">
+    </mat-form-field>
+    <mat-form-field>
+        <input required type="number" matInput [(ngModel)]="profMatiere" name="prof" placeholder="prof" class="comp">  
+    </mat-form-field>
+    
+    <select  type="number" matInput [(ngModel)]="profMatiere" name="prof" placeholder="prof" class="comp">
+      <option *ngFor="let prof of profs"value={{prof.id}}>{{prof.nom}} {{prof.prenom}}</option>
+    </select>
+  
+  
+      <button mat-stroked-button color="primary" class="comp">
+        Ajouter une matiere
+      </button>
+    
+        
+     
+   
+  </form>

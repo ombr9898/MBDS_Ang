@@ -1,0 +1,24 @@
+<main class="container">
+  
+  <button mat-button (click)="pagePrecedente()" [disabled]="!hasPrevPage">Page précédente</button>
+  &nbsp;&nbsp;
+  <button mat-button (click)="pageSuivante()" [disabled]="!hasNextPage">Page Suivante</button>
+    <div class="cards">
+      <div class="card">
+        <mat-list *ngFor="let eleve of eleves">
+          <a routerLink="/eleve/{{eleve.id}}">
+            <h1 mat-subheader>Nom:{{eleve.nom}}</h1>
+            <h2 mat-subheader>Prenom{{eleve.prenom}}</h2>
+            <h3 mat-subheader>Adresse:{{eleve.adresse}}</h3>
+            <mat-list-item (click)="eleveClique(eleve)">
+              <ng-template #nonsoumis>
+                {{eleve.nom}} pas encore rendu.
+              </ng-template>
+            </mat-list-item>
+          </a>
+          <mat-divider></mat-divider>
+        </mat-list>
+     </div>
+   </div>
+  </main>
+  

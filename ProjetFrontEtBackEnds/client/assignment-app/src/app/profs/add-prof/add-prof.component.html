@@ -1,0 +1,25 @@
+<form ngForm #profForm class="form" (submit)="onSubmit($event);profForm.reset();">
+    <mat-form-field>
+      <input required matInput [(ngModel)]="nomProf" name="nomProf" placeholder="Nom du prof" class="comp">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input required matInput [(ngModel)]="prenomProf" name="prenomProf" placeholder="Prenom du prof" class="comp">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input required matInput [(ngModel)]="adresseProf" name="adresseProf" placeholder="Adresse du prof" class="comp">
+    </mat-form-field>
+    
+    <mat-form-field>
+        <input required matInput [(ngModel)]="photoProf" name="photoProf" placeholder="Photo du prof" class="comp">
+    </mat-form-field>
+  
+    
+  
+      <button mat-stroked-button color="primary" class="comp">
+        Ajouter un prof
+      </button>
+   
+  </form>
+  

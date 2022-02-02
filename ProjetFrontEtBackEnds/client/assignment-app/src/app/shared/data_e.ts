@@ -1,0 +1,22 @@
+const bdInitialEleves = [{"id":1,"nom":"Tybalt","prenom":"Lindi","adresse":"2 Gale Way"},
+{"id":2,"nom":"Dottie","prenom":"Greta","adresse":"209 Mandrake Point"},
+{"id":3,"nom":"Joye","prenom":"Kelvin","adresse":"3069 Stang Terrace"},
+{"id":4,"nom":"Isaac","prenom":"Berte","adresse":"0 Victoria Lane"},
+{"id":5,"nom":"Sandi","prenom":"Mufi","adresse":"852 2nd Point"},
+{"id":6,"nom":"Johna","prenom":"Brigida","adresse":"16723 Amoth Alley"},
+{"id":7,"nom":"Clem","prenom":"Shanon","adresse":"82 Heath Way"},
+{"id":8,"nom":"Doretta","prenom":"Aurore","adresse":"33 Fremont Street"},
+{"id":9,"nom":"Maible","prenom":"Roseanne","adresse":"3 Cordelia Lane"},
+{"id":10,"nom":"Cynthia","prenom":"Geri","adresse":"82 Coleman Crossing"},
+{"id":11,"nom":"Kacie","prenom":"Nobe","adresse":"45744 Scofield Street"},
+{"id":12,"nom":"Obie","prenom":"Joycelin","adresse":"9 Declaration Avenue"},
+{"id":13,"nom":"Prudy","prenom":"Gifford","adresse":"16361 Commercial Trail"},
+{"id":14,"nom":"Panchito","prenom":"Mathew","adresse":"59564 Blaine Junction"},
+{"id":15,"nom":"Erskine","prenom":"Berna","adresse":"13273 Morning Hill"},
+{"id":16,"nom":"Evelina","prenom":"Selle","adresse":"707 Schlimgen Circle"},
+{"id":17,"nom":"Bren","prenom":"Pasquale","adresse":"31389 Lunder Alley"},
+{"id":18,"nom":"Liza","prenom":"Chase","adresse":"4368 Spaight Hill"},
+{"id":19,"nom":"Dagny","prenom":"Archy","adresse":"4 Lunder Alley"},
+{"id":20,"nom":"Briggs","prenom":"Shermie","adresse":"537 Arrowood Place"}]
+
+export { bdInitialEleves}

@@ -1,0 +1,22 @@
+const bdInitialMatieres= [{"id":1,"name":"Photobug","image":"Voonte","prof":1},
+{"id":2,"name":"Oyondu","image":"Avamm","prof":2},
+{"id":3,"name":"Meevee","image":"Twimm","prof":3},
+{"id":4,"name":"Rooxo","image":"Flipbug","prof":4},
+{"id":5,"name":"Rhynoodle","image":"Kazio","prof":5},
+{"id":6,"name":"Bubblebox","image":"Blognation","prof":6},
+{"id":7,"name":"Twitterworks","image":"Kwilith","prof":7},
+{"id":8,"name":"Dynazzy","image":"Jaxworks","prof":8},
+{"id":9,"name":"Lazzy","image":"Browsecat","prof":9},
+{"id":10,"name":"Jabbercube","image":"Eire","prof":10},
+{"id":11,"name":"Innotype","image":"Oozz","prof":11},
+{"id":12,"name":"Realcube","image":"Trilia","prof":12},
+{"id":13,"name":"Brainsphere","image":"Leexo","prof":13},
+{"id":14,"name":"Babblestorm","image":"Babblestorm","prof":14},
+{"id":15,"name":"Flashpoint","image":"Tagopia","prof":15},
+{"id":16,"name":"Tagchat","image":"Trunyx","prof":16},
+{"id":17,"name":"Demimbu","image":"Twitterworks","prof":17},
+{"id":18,"name":"Podcat","image":"Eazzy","prof":18},
+{"id":19,"name":"Quatz","image":"Edgeblab","prof":19},
+{"id":20,"name":"Gabvine","image":"Skyndu","prof":20}]
+
+export { bdInitialMatieres}
