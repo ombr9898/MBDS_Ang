@@ -13,6 +13,8 @@ utilisation pour la premeire fois de Angular , NodeJS
 
 -npm start
 
+- identifiant zakaria password 123
+
 ## Travail réaliser
 
 -4 tableau eleve , assignement , matiers et prof 
